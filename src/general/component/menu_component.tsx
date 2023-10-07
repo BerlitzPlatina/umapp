@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { SettingOutlined } from '@ant-design/icons';
 import type { MenuProps } from 'antd';
 import { Menu } from 'antd';
@@ -15,13 +15,13 @@ const items: MenuProps['items'] = [
         children: [
           {
             label: 'Option 1',
-            key: 'setting:1',
+            key: 'setting:1'
           },
           {
             label: 'Option 2',
-            key: 'setting:2',
-          },
-        ],
+            key: 'setting:2'
+          }
+        ]
       },
       {
         type: 'group',
@@ -29,15 +29,15 @@ const items: MenuProps['items'] = [
         children: [
           {
             label: 'Option 3',
-            key: 'setting:3',
+            key: 'setting:3'
           },
           {
             label: 'Option 4',
-            key: 'setting:4',
-          },
-        ],
-      },
-    ],
+            key: 'setting:4'
+          }
+        ]
+      }
+    ]
   },
   {
     label: 'Navigation Three - Submenu',
@@ -50,13 +50,13 @@ const items: MenuProps['items'] = [
         children: [
           {
             label: 'Option 1',
-            key: 'setting:1',
+            key: 'setting:1'
           },
           {
             label: 'Option 2',
-            key: 'setting:2',
-          },
-        ],
+            key: 'setting:2'
+          }
+        ]
       },
       {
         type: 'group',
@@ -64,16 +64,16 @@ const items: MenuProps['items'] = [
         children: [
           {
             label: 'Option 3',
-            key: 'setting:3',
+            key: 'setting:3'
           },
           {
             label: 'Option 4',
-            key: 'setting:4',
-          },
-        ],
-      },
-    ],
-  },
+            key: 'setting:4'
+          }
+        ]
+      }
+    ]
+  }
 ];
 
 const MenuComponent: React.FC = () => {

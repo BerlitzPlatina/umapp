@@ -5,22 +5,22 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import {
   createBrowserRouter,
-  RouterProvider,
-} from "react-router-dom";
+  RouterProvider
+} from 'react-router-dom';
 import ArticleList from './features/article/component/ArticleList';
 const router = createBrowserRouter([
   {
-    path: "/",
-    element: <App/>,
+    path: '/',
+    element: <App/>
   },
   {
-    path: "/hello",
-    element: <div>Hello word</div>,
+    path: '/hello',
+    element: <div>Hello word</div>
   },
   {
-    path: "/articles",
-    element: <ArticleList/>,
-  },
+    path: '/articles',
+    element: <ArticleList/>
+  }
 ]);
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement

@@ -1,4 +1,3 @@
-import React from 'react';
 import { Space, Table, Tag } from 'antd';
 import type { ColumnsType } from 'antd/es/table';
 
@@ -15,17 +14,17 @@ const columns: ColumnsType<DataType> = [
     title: 'Name',
     dataIndex: 'name',
     key: 'name',
-    render: (text) => <a>{text}</a>,
+    render: (text) => <a>{text}</a>
   },
   {
     title: 'Age',
     dataIndex: 'age',
-    key: 'age',
+    key: 'age'
   },
   {
     title: 'Address',
     dataIndex: 'address',
-    key: 'address',
+    key: 'address'
   },
   {
     title: 'Tags',
@@ -45,7 +44,7 @@ const columns: ColumnsType<DataType> = [
           );
         })}
       </>
-    ),
+    )
   },
   {
     title: 'Action',
@@ -55,8 +54,8 @@ const columns: ColumnsType<DataType> = [
         <a>Invite {record.name}</a>
         <a>Delete</a>
       </Space>
-    ),
-  },
+    )
+  }
 ];
 
 const data: DataType[] = [
@@ -65,22 +64,22 @@ const data: DataType[] = [
     name: 'John Brown',
     age: 32,
     address: 'New York No. 1 Lake Park',
-    tags: ['nice', 'developer'],
+    tags: ['nice', 'developer']
   },
   {
     key: '2',
     name: 'Jim Green',
     age: 42,
     address: 'London No. 1 Lake Park',
-    tags: ['loser'],
+    tags: ['loser']
   },
   {
     key: '3',
     name: 'Joe Black',
     age: 32,
     address: 'Sydney No. 1 Lake Park',
-    tags: ['cool', 'teacher'],
-  },
+    tags: ['cool', 'teacher']
+  }
 ];
 
 const ArticleList: React.FC = () => <Table columns={columns} dataSource={data} />;

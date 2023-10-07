@@ -1,7 +1,7 @@
-import './App.css';
+// import * from './App.css';
 import MenuComponent from './general/component/menu_component';
 
-function App() {
+const App: React.FC = () => {
   return <MenuComponent/>;
 }
 
