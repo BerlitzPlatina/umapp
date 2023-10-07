@@ -7,6 +7,7 @@ import {
   createBrowserRouter,
   RouterProvider,
 } from "react-router-dom";
+import ArticleList from './features/article/component/ArticleList';
 const router = createBrowserRouter([
   {
     path: "/",
@@ -15,6 +16,10 @@ const router = createBrowserRouter([
   {
     path: "/hello",
     element: <div>Hello word</div>,
+  },
+  {
+    path: "/articles",
+    element: <ArticleList/>,
   },
 ]);
 const root = ReactDOM.createRoot(
