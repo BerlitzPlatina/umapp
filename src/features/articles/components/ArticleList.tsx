@@ -84,9 +84,7 @@ const data: DataType[] = [
 
 const ArticleList: React.FC = () => {
   const articleQuery = useArticles({ config: undefined });
-  console.log('11111111111111');
 
-  console.log(articleQuery);
   if (articleQuery.isLoading !== '') {
     return (
       <div className='w-full h-48 flex justify-center items-center'>Hello</div>

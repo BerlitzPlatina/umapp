@@ -1,0 +1,70 @@
+{
+  "files.autoSave": "onWindowChange",
+  "explorer.autoReveal": false,
+  "editor.fontSize": 16,
+  "editor.tabSize": 4,
+  "[javascript]": {
+    "editor.tabSize": 2
+  },
+  "[json]": {
+    "editor.tabSize": 2,
+    "editor.defaultFormatter": "vscode.json-language-features"
+  },
+
+  // This one forces the tab to be **space**
+  "editor.insertSpaces": true,
+  "diffEditor.ignoreTrimWhitespace": false,
+  "[php]": {
+    "editor.defaultFormatter": "bmewburn.vscode-intelephense-client"
+  },
+  "tabnine.experimentalAutoImports": true,
+  "sshfs.configs": [
+    {
+      "name": "kp"
+    }
+  ],
+  "remote.SSH.enableAzureIntegration": true,
+  "remote.SSH.configFile": "D:\\ssh",
+  "security.workspace.trust.untrustedFiles": "open",
+  "workbench.iconTheme": "material-icon-theme",
+  "workbench.colorTheme": "Sublime Text 4 Theme",
+  "editor.largeFileOptimizations": false,
+  "terminal.integrated.defaultProfile.windows": "Git Bash",
+  "remote.SSH.connectTimeout": 30,
+  "[typescript]": {
+    "editor.defaultFormatter": "vscode.typescript-language-features",
+    "editor.tabSize": 2
+  },
+  "remote.SSH.remotePlatform": {
+    "52.77.241.19": "linux",
+    "13.229.207.130": "linux",
+    "54.255.189.121": "linux",
+    "10.2.0.201": "linux"
+  },
+  "editor.guides.bracketPairs": "active",
+  "git.mergeEditor": false,
+  "[typescriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.tabSize": 2
+  },
+  "terminal.external.windowsExec": "C:\\WINDOWS\\System32\\bash.exe",
+  "boot-java.rewrite.reconcile": true,
+  "redhat.telemetry.enabled": true,
+  "[dart]": {
+    "editor.formatOnSave": true,
+    "editor.formatOnType": true,
+    "editor.rulers": [80],
+    "editor.selectionHighlight": true,
+    "editor.suggestSelection": "first",
+    "editor.tabCompletion": "onlySnippets",
+    "editor.wordBasedSuggestions": false
+  },
+  "javascript.updateImportsOnFileMove.enabled": "always",
+  "typescript.updateImportsOnFileMove.enabled": "always",
+  "prettier.jsxSingleQuote": true,
+  "prettier.singleQuote": true,
+  "prettier.trailingComma": "none",
+  "typescript.format.insertSpaceBeforeFunctionParenthesis": true,
+  "editor.formatOnSave": true,
+  "editor.defaultFormatter": "esbenp.prettier-vscode"
+}
