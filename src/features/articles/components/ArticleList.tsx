@@ -1,6 +1,6 @@
 import { Space, Table, Tag } from 'antd';
 import type { ColumnsType } from 'antd/es/table';
-
+import { useArticles } from '../api/getArticles';
 interface DataType {
   key: string;
   name: string;
@@ -50,7 +50,7 @@ const columns: ColumnsType<DataType> = [
     title: 'Action',
     key: 'action',
     render: (_, record) => (
-      <Space size="middle">
+      <Space size='middle'>
         <a>Invite {record.name}</a>
         <a>Delete</a>
       </Space>
@@ -82,6 +82,22 @@ const data: DataType[] = [
   }
 ];
 
-const ArticleList: React.FC = () => <Table columns={columns} dataSource={data} />;
+const ArticleList: React.FC = () => {
+  const articleQuery = useArticles({ config: undefined });
+  console.log('11111111111111');
+
+  console.log(articleQuery);
+  if (articleQuery.isLoading !== '') {
+    return (
+      <div className='w-full h-48 flex justify-center items-center'>Hello</div>
+    );
+  }
+  console.log(articleQuery?.data?.length);
+
+  if (articleQuery?.data?.length !== 0) {
+    return <div>Not Hello</div>;
+  }
+  return <Table columns={columns} dataSource={data} />;
+};
 
 export default ArticleList;

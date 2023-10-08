@@ -3,15 +3,14 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import {
-  createBrowserRouter,
-  RouterProvider
-} from 'react-router-dom';
+import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import ArticleList from './features/articles/components/ArticleList';
+import { QueryClientProvider } from 'react-query';
+import { queryClient } from './lib/react-query';
 const router = createBrowserRouter([
   {
     path: '/',
-    element: <App/>
+    element: <App />
   },
   {
     path: '/hello',
@@ -19,7 +18,7 @@ const router = createBrowserRouter([
   },
   {
     path: '/articles',
-    element: <ArticleList/>
+    element: <ArticleList />
   }
 ]);
 const root = ReactDOM.createRoot(
@@ -28,7 +27,9 @@ const root = ReactDOM.createRoot(
 root.render(
   <React.StrictMode>
     {/* <App /> */}
-    <RouterProvider router={router} />
+    <QueryClientProvider client={queryClient}>
+      <RouterProvider router={router} />
+    </QueryClientProvider>
   </React.StrictMode>
 );
 

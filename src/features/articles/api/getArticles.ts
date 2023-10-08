@@ -5,25 +5,25 @@ import { type ExtractFnReturnType, type QueryConfig } from '../../../lib/react-q
 
 import type { Article } from '../types';
 
-export const getArticles = async ({ discussionId }: { discussionId: string }): Promise<Article[]> => {
+export const getArticles = async (): Promise<Article[]> => {
   return await axios.get('/articles', {
     params: {
-      discussionId
+      // discussionId
     }
   });
 };
 
 type QueryFnType = typeof getArticles;
 
-interface UseCommentsOptions {
-  discussionId: string;
+interface UseArticlesOptions {
+  // discussionId: string;
   config?: QueryConfig<QueryFnType>;
 }
 
-export const useArticles: any = ({ discussionId, config }: UseCommentsOptions) => {
+export const useArticles: any = ({ config }: UseArticlesOptions) => {
   return useQuery<ExtractFnReturnType<QueryFnType>>({
-    queryKey: ['articles', discussionId],
-    queryFn: async () => await getArticles({ discussionId }),
+    queryKey: ['articles'],
+    queryFn: async () => await getArticles(/* { discussionId } */),
     ...config
   });
 };
