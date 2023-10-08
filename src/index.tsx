@@ -7,7 +7,7 @@ import {
   createBrowserRouter,
   RouterProvider
 } from 'react-router-dom';
-import ArticleList from './features/article/component/ArticleList';
+import ArticleList from './features/article/components/ArticleList';
 const router = createBrowserRouter([
   {
     path: '/',
