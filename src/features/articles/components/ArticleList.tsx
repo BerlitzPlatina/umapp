@@ -1,101 +1,32 @@
-import { Space, Table, Tag } from 'antd';
+import { Table } from 'antd';
 import type { ColumnsType } from 'antd/es/table';
-import { useArticles } from '../api/getArticles';
-interface DataType {
-  key: string;
-  name: string;
-  age: number;
-  address: string;
-  tags: string[];
-}
+import { getArticles } from '../api/getArticles';
+import { useEffect, useState } from 'react';
+import type { Article } from '../types';
 
-const columns: ColumnsType<DataType> = [
+const columns: ColumnsType<Article> = [
   {
-    title: 'Name',
-    dataIndex: 'name',
-    key: 'name',
-    render: (text) => <a>{text}</a>
+    title: 'Title',
+    dataIndex: 'title',
+    key: 'title'
   },
   {
-    title: 'Age',
-    dataIndex: 'age',
-    key: 'age'
-  },
-  {
-    title: 'Address',
-    dataIndex: 'address',
-    key: 'address'
-  },
-  {
-    title: 'Tags',
-    key: 'tags',
-    dataIndex: 'tags',
-    render: (_, { tags }) => (
-      <>
-        {tags.map((tag) => {
-          let color = tag.length > 5 ? 'geekblue' : 'green';
-          if (tag === 'loser') {
-            color = 'volcano';
-          }
-          return (
-            <Tag color={color} key={tag}>
-              {tag.toUpperCase()}
-            </Tag>
-          );
-        })}
-      </>
-    )
-  },
-  {
-    title: 'Action',
-    key: 'action',
-    render: (_, record) => (
-      <Space size='middle'>
-        <a>Invite {record.name}</a>
-        <a>Delete</a>
-      </Space>
-    )
-  }
-];
-
-const data: DataType[] = [
-  {
-    key: '1',
-    name: 'John Brown',
-    age: 32,
-    address: 'New York No. 1 Lake Park',
-    tags: ['nice', 'developer']
-  },
-  {
-    key: '2',
-    name: 'Jim Green',
-    age: 42,
-    address: 'London No. 1 Lake Park',
-    tags: ['loser']
-  },
-  {
-    key: '3',
-    name: 'Joe Black',
-    age: 32,
-    address: 'Sydney No. 1 Lake Park',
-    tags: ['cool', 'teacher']
+    title: 'Content',
+    dataIndex: 'content',
+    key: 'content'
   }
 ];
 
 const ArticleList: React.FC = () => {
-  const articleQuery = useArticles({ config: undefined });
-
-  if (articleQuery.isLoading !== '') {
-    return (
-      <div className='w-full h-48 flex justify-center items-center'>Hello</div>
-    );
-  }
-  console.log(articleQuery?.data?.length);
-
-  if (articleQuery?.data?.length !== 0) {
-    return <div>Not Hello</div>;
-  }
-  return <Table columns={columns} dataSource={data} />;
+  const [articles, setArticles] = useState<Article[]>([]);
+  useEffect(() => {
+    getArticles()
+      .then((res) => {
+        setArticles(res.data);
+      })
+      .catch((err) => err);
+  }, []);
+  return <Table columns={columns} dataSource={articles} rowKey={'id'} />;
 };
 
 export default ArticleList;

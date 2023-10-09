@@ -4,8 +4,9 @@ import { axios } from '../../../lib/axios';
 import { type ExtractFnReturnType, type QueryConfig } from '../../../lib/react-query';
 
 import type { Article } from '../types';
+import type { AxiosResponse } from 'axios';
 
-export const getArticles = async (): Promise<Article[]> => {
+export const getArticles = async (): Promise<AxiosResponse<Article[]>> => {
   return await axios.get('/articles', {
     params: {
       // discussionId
