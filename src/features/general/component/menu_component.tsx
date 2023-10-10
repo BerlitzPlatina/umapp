@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { SettingOutlined } from '@ant-design/icons';
 import type { MenuProps } from 'antd';
 import { Menu } from 'antd';
+import { Link } from 'react-router-dom';
 
 const items: MenuProps['items'] = [
   {
@@ -14,7 +15,7 @@ const items: MenuProps['items'] = [
         label: 'Item 1',
         children: [
           {
-            label: 'Option 1',
+            label: <Link to='/tacos'>Tacos</Link>,
             key: 'setting:1'
           },
           {
@@ -84,7 +85,14 @@ const MenuComponent: React.FC = () => {
     setCurrent(e.key);
   };
 
-  return <Menu onClick={onClick} selectedKeys={[current]} mode="horizontal" items={items} />;
+  return (
+    <Menu
+      onClick={onClick}
+      selectedKeys={[current]}
+      mode='horizontal'
+      items={items}
+    />
+  );
 };
 
 export default MenuComponent;
