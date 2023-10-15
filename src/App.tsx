@@ -8,6 +8,7 @@ import { Layout, Space } from 'antd';
 import { Content, Footer, Header } from 'antd/es/layout/layout';
 import Sider from 'antd/es/layout/Sider';
 import Example from './features/general/Example';
+import Home from './features/home/Home';
 const headerStyle: React.CSSProperties = {
   textAlign: 'center',
   color: '#fff',
@@ -49,16 +50,19 @@ const App: React.FC = () => {
           <Header style={{ display: 'flex', justifyContent: 'center' }}>
             <MenuComponent />
           </Header>
-          <Layout hasSider>
-            <Sider style={siderStyle}>Sider</Sider>
+          <Layout
+            style={{ display: 'flex', justifyContent: 'space-between' }}
+            hasSider
+          >
+            <Sider style={siderStyle}></Sider>
             {/* <Content style={contentStyle}>Content</Content> */}
             <Routes>
-              <Route path='/' element={<News />} />
+              <Route path='/' element={<Home />} />
               <Route path='/test' element={<Test />} />
               <Route path='/news' element={<News />} />
               <Route path='/example' element={<Example />} />
             </Routes>
-            <Sider style={siderStyle}>Sider</Sider>
+            <Sider style={siderStyle}></Sider>
           </Layout>
           <Footer style={footerStyle}>Footer</Footer>
         </Layout>
